@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		486BA40A16FB4854000BDA47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 486BA40916FB4854000BDA47 /* Foundation.framework */; };
 		486BA40D16FB4854000BDA47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 486BA40C16FB4854000BDA47 /* main.m */; };
-		486BA41A16FB487F000BDA47 /* MultibyteDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 486BA41916FB487F000BDA47 /* MultibyteDescription.m */; };
+		9188DDD1AFD04F778E6CC73E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B277E4C550489B9F1855D1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +29,8 @@
 		486BA40916FB4854000BDA47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		486BA40C16FB4854000BDA47 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		486BA40F16FB4854000BDA47 /* MultibyteDescriptionDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultibyteDescriptionDemo-Prefix.pch"; sourceTree = "<group>"; };
-		486BA41816FB487F000BDA47 /* MultibyteDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultibyteDescription.h; sourceTree = "<group>"; };
-		486BA41916FB487F000BDA47 /* MultibyteDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultibyteDescription.m; sourceTree = "<group>"; };
+		B3B277E4C550489B9F1855D1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D362054217884989998DC7CA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +39,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				486BA40A16FB4854000BDA47 /* Foundation.framework in Frameworks */,
+				9188DDD1AFD04F778E6CC73E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,10 +49,10 @@
 		486BA3FD16FB4854000BDA47 = {
 			isa = PBXGroup;
 			children = (
-				486BA41716FB487F000BDA47 /* MultibyteDescription */,
 				486BA40B16FB4854000BDA47 /* MultibyteDescriptionDemo */,
 				486BA40816FB4854000BDA47 /* Frameworks */,
 				486BA40716FB4854000BDA47 /* Products */,
+				D362054217884989998DC7CA /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				486BA40916FB4854000BDA47 /* Foundation.framework */,
+				B3B277E4C550489B9F1855D1 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -88,16 +90,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		486BA41716FB487F000BDA47 /* MultibyteDescription */ = {
-			isa = PBXGroup;
-			children = (
-				486BA41816FB487F000BDA47 /* MultibyteDescription.h */,
-				486BA41916FB487F000BDA47 /* MultibyteDescription.m */,
-			);
-			name = MultibyteDescription;
-			path = ../MultibyteDescription;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,9 +97,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 486BA41416FB4854000BDA47 /* Build configuration list for PBXNativeTarget "MultibyteDescriptionDemo" */;
 			buildPhases = (
+				386F9AECF6B348F8A3B10866 /* Check Pods Manifest.lock */,
 				486BA40216FB4854000BDA47 /* Sources */,
 				486BA40316FB4854000BDA47 /* Frameworks */,
 				486BA40416FB4854000BDA47 /* CopyFiles */,
+				DAB335111C6740D7BA86FEC5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,13 +138,43 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		386F9AECF6B348F8A3B10866 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		DAB335111C6740D7BA86FEC5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		486BA40216FB4854000BDA47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				486BA40D16FB4854000BDA47 /* main.m in Sources */,
-				486BA41A16FB487F000BDA47 /* MultibyteDescription.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +242,7 @@
 		};
 		486BA41516FB4854000BDA47 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D362054217884989998DC7CA /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultibyteDescriptionDemo/MultibyteDescriptionDemo-Prefix.pch";
@@ -227,6 +252,7 @@
 		};
 		486BA41616FB4854000BDA47 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D362054217884989998DC7CA /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultibyteDescriptionDemo/MultibyteDescriptionDemo-Prefix.pch";
@@ -253,6 +279,7 @@
 				486BA41616FB4854000BDA47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
