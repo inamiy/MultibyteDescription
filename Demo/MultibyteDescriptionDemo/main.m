@@ -15,7 +15,7 @@ int main(int argc, const char * argv[])
         
         [MultibyteDescription install];
         
-        NSArray* arr = @[@"あいうえお", @[@"アイウエオ", @"カキクケコ", @[@"唖伊兎絵尾", @"可来区毛個"], @"サシスセソ"], @"かきくけこ", @"さしすせそ", @"abcde", @{ @"たちつてと" : @"なにぬねの",  @"はひふへほ" : @"まみむめも"}];
+        NSArray* arr = @[ @"あいうえお", @"カキクケコ", @"abcde", @[ @"らりるれろ", @"らりるれろ" ] , @{ @"English" : @"hello", @"日本語" : @"こんにちは",  @"한국어" : @"안녕하세요",  @"中文" : @"你好" } ];
         NSLog(@"array = \n%@",arr);
         
         NSDictionary* dict = @{ @"キー" : arr };
