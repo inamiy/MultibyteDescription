@@ -79,6 +79,7 @@
     
     //------------------------------
     // NSDictionary
+    // (FIXME: improve indentation)
     //------------------------------
     c = [NSDictionary class];
     
