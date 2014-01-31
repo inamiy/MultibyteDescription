@@ -30,14 +30,14 @@
         NSMutableString *mStr = [NSMutableString stringWithString:@"(\n"];
         [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop){
             if ([obj isKindOfClass:[NSArray class]] || [obj isKindOfClass:[NSDictionary class]]) {
-                [mStr appendFormat:@"%@,\n", [obj descriptionWithLocale:locale indent:2]];
+                [mStr appendFormat:@"%@", [obj descriptionWithLocale:locale indent:2]];
             } else {
                 [mStr appendFormat:@"    %@", [obj description]];
-                if (idx == [arr count] - 1) {
-                    [mStr appendString:@"\n"];
-                } else {
-                    [mStr appendString:@",\n"];
-                }
+            }
+            if (idx == [arr count] - 1) {
+                [mStr appendString:@"\n"];
+            } else {
+                [mStr appendString:@",\n"];
             }
         }];
         [mStr appendString:@")"];
@@ -55,17 +55,17 @@
         [mStr appendString:@"(\n"];
         [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop){
             if ([obj isKindOfClass:[NSArray class]] || [obj isKindOfClass:[NSDictionary class]]) {
-                [mStr appendFormat:@"    %@,\n", [obj descriptionWithLocale:locale indent:indent + 1]];
+                [mStr appendFormat:@"    %@", [obj descriptionWithLocale:locale indent:indent + 1]];
             } else {
                 for (int i = 0; i < indent; i++) {
                     [mStr appendString:@"    "];
                 }
                 [mStr appendFormat:@"%@", [obj description]];
-                if (idx == [arr count] - 1) {
-                    [mStr appendString:@"\n"];
-                } else {
-                    [mStr appendString:@",\n"];
-                }
+            }
+            if (idx == [arr count] - 1) {
+                [mStr appendString:@"\n"];
+            } else {
+                [mStr appendString:@",\n"];
             }
         }];
         for (int i = 0; i < indent - 1; i++) {
