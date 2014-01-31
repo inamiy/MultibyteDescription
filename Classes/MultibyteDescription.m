@@ -109,12 +109,12 @@
         [mStr appendString:@"{\n"];
         
         [dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            for (int i = 0; i < indent; i++) {
+                [mStr appendString:@"    "];
+            }
             if ([obj isKindOfClass:[NSArray class]] || [obj isKindOfClass:[NSDictionary class]]) {
                 [mStr appendFormat:@"%@ = %@;\n", key, [obj descriptionWithLocale:locale indent:indent + 1]];
             } else {
-                for (int i = 0; i < indent; i++) {
-                    [mStr appendString:@"    "];
-                }
                 [mStr appendFormat:@"%@ = %@;\n", key, [obj description]];
             }
         }];
