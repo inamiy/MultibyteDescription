@@ -1,4 +1,4 @@
-MultibyteDescription 0.1
+MultibyteDescription 0.2
 ========================
 
 A better way to NSLog multibyte string for OSX/iOS. 
