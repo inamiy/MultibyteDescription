@@ -118,7 +118,7 @@
                 [mStr appendFormat:@"%@ = %@;\n", key, [obj description]];
             }
         }];
-        for (int i = 0; i < indent - 1; i++) {
+        for (int i = 0; indent > 0 && i < indent - 1; i++) {
             [mStr appendString:@"    "];
         }
         [mStr appendString:@"}"];
